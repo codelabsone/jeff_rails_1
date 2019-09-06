@@ -1,7 +1,18 @@
 <h1>Dealership Inventory</h1>
 
-<ul>
-<% @makes.each do |auto| %>
-  <li><%= auto %></li>
+<% @inventory.each do |inventory| %>
+  <article>
+    <header>
+      <h2><%= inventory.make %></h2>
+    </header>
+    <p>
+      <%= inventory.model %>
+    </p>
+    <table>
+      <tr>
+        <th>Sales Price:</th>
+        <td><%= inventory.saleprice %></td>
+      </tr>
+    </table>
+  </article>
 <% end %>
-</ul>
