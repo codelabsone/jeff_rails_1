@@ -3,10 +3,11 @@
 <% @inventory.each do |inventory| %>
   <article>
     <header>
-      <h2><%= inventory.make %></h2>
+      <h2><%= inventory.model %></h2>
     </header>
     <p>
-      <%= inventory.model %>
+      <%= inventory.color %></br>
+      <%= inventory.year %></br>
     </p>
     <table>
       <tr>
