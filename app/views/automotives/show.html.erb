@@ -1,18 +1,23 @@
 <article>
   <header>
-    <h1><%= @inventory.make %></h1>
+    <h1><%= @inventory.make %> <%= @inventory.model %></h1>
   </header>
-  <h2>Model</h2>
-  <p>
-    <%= @inventory.model %>
-  </p>
   <h3>Color</h3>
   <p>
     <%= @inventory.color %>
   </p>
-  <h3>Dealer Price</h3>
+  <h3>Year</h3>
+  <p>
+    <%= @inventory.year %>
+  </p>
+  <h3>Sale Price</h3>
   <p>
     <%= @inventory.saleprice %>
   </p>
-  <h3></h3>
+  <h3>Inventory Status</h3>
+  <p>
+    <%= @inventory.inventorystatus %>
+  </p>
 </article>
+
+<%= link_to("All Inventory", root_path) %>

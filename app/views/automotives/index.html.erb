@@ -3,17 +3,8 @@
 <% @inventory.each do |inventory| %>
   <article>
     <header>
-      <h2><%= inventory.model %></h2>
+      <h2>Vehicle: <%= link_to(inventory.id, automotive_path(inventory)) %></h2>
+      <%= image_tag(inventory.url, size: "200x200",) %>
     </header>
-    <p>
-      <%= inventory.color %></br>
-      <%= inventory.year %></br>
-    </p>
-    <table>
-      <tr>
-        <th>Sales Price:</th>
-        <td><%= inventory.saleprice %></td>
-      </tr>
-    </table>
   </article>
 <% end %>

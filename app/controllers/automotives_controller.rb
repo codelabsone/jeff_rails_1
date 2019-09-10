@@ -1,9 +1,9 @@
 class AutomotivesController < ApplicationController
   def index
-    @makes = ['Chrysler', 'Dodge', 'Jeep', 'Ram']
+    @inventory = Inventory.all
   end
 
   def show
-    @inventory = Inventory.find(1)
+    @inventory = Inventory.find(params[:id])
   end
 end
