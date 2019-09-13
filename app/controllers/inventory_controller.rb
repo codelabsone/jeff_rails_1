@@ -1,4 +1,4 @@
-class AutomotivesController < ApplicationController
+class InventoryController < ApplicationController
   def index
     @inventory = Inventory.all
   end
