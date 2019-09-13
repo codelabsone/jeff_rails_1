@@ -1,11 +1,4 @@
 class InventoryController < ApplicationController
-  def index
-    @inventory = Inventory.all
-  end
-
-  def show
-    @inventory = Inventory.find(params[:id])
-  end
 
   def edit
     @inventory = Inventory.find(params[:id])
@@ -21,15 +14,16 @@ class InventoryController < ApplicationController
     @inventory = Inventory.new
   end
 
+  private
+
+  def inventory_params
+    params.require(:inventory).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus)
+  end
+
   def create
     @inventory = Inventory.new(inventory_params)
     @inventory.save
     redirect_to @inventory
   end
 
-  private
-
-  def inventory_params
-    params.require(:inventory).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus)
-  end
 end
