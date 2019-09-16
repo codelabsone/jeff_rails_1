@@ -1,10 +1,9 @@
 class AutomotivesController < ApplicationController
   def index
-    @inventory = Inventory.all
+    @stocks = Stock.all
   end
 
   def show
-    @inventory = Inventory.find(params[:id])
+    @stock = Stock.find(params[:id])
   end
-
 end

@@ -1,0 +1,42 @@
+<%= form_for(@stock) do |f| %>
+<p>
+  <%= f.label :make %><br/>
+  <%= f.text_field :make, autofocus: true %>
+</p>
+<p>
+  <%= f.label :model %><br/>
+  <%= f.text_field :model %>
+</p>
+<p>
+  <%= f.label :color %><br/>
+  <%= f.text_field :color %>
+</p>
+<p>
+  <%= f.label :year %><br/>
+  <%= f.text_field :year %>
+</p>
+<p>
+  <%= f.label :dealerprice %><br/>
+  <%= f.text_field :dealerprice %>
+</p>
+<p>
+  <%= f.label :saleprice %><br/>
+  <%= f.text_field :saleprice %>
+</p>
+<p>
+  <%= f.label :profit %><br/>
+  <%= f.text_field :profit %>
+</p>
+<p>
+  <%= f.label :inventorystatus %><br/>
+  <%= f.text_field :inventorystatus %>
+</p>
+<p>
+  <%= f.label :url %><br/>
+  <%= f.text_field :url %>
+</p>
+<p>
+  <%= f.submit %>
+  <%= link_to "Cancel", automotives_path %>
+</p>
+<% end %>

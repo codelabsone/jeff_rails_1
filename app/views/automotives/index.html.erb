@@ -1,12 +1,10 @@
 <h1>Dealership Inventory</h1>
 
-<% @inventory.each do |inventory| %>
+<% @stocks.each do |stock| %>
   <article>
     <header>
-      <h2>Vehicle: <%= link_to(inventory.id, automotive_path(inventory)) %></h2>
-      <%= image_tag(inventory.url, size: "200x200",) %>
+      <h2>Vehicle: <%= link_to(stock.id, automotive_path(stock)) %></h2>
+      <%= image_for(stock) %>
     </header>
   </article>
 <% end %>
-
-<%= link_to("Add New Automotive", new_automotive_path) %>
