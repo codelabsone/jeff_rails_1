@@ -1,0 +1,8 @@
+<% @stocks.each do |stock| %>
+  <article>
+    <header>
+      <h2>Vehicle: <%= link_to(stock.id, stock_path(stock)) %></h2>
+      <%= image_for(stock) %>
+    </header>
+  </article>
+<% end %>
