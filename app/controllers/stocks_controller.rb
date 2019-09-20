@@ -1,4 +1,12 @@
 class StocksController < ApplicationController
+  def index
+    @stocks = Stock.all
+  end
+
+  def show
+    @stock = Stock.find(params[:id])
+  end
+
   def edit
     @stock = Stock.find(params[:id])
   end
@@ -6,7 +14,7 @@ class StocksController < ApplicationController
   def update
     @stock = Stock.find(params[:id])
     @stock.update(stock_params)
-    redirect_to automotives_url
+    redirect_to @stock
   end
 
   def new
@@ -16,13 +24,13 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.new(stock_params)
     @stock.save
-    redirect_to automotives_url
+    redirect_to @stock
   end
 
   def destroy
   @stock = Stock.find(params[:id])
   @stock.destroy
-  redirect_to automotives_url
+  redirect_to @stock
   end
 
   private
@@ -30,7 +38,5 @@ class StocksController < ApplicationController
   def stock_params
     params.require(:stock).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus, :url)
   end
-
-
 
 end
