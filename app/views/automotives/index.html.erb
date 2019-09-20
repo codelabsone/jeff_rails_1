@@ -1,8 +1,5 @@
-<% @stocks.each do |stock| %>
-  <article>
-    <header>
-      <h2>Vehicle: <%= link_to(stock.id, automotive_path(stock)) %></h2>
-      <%= image_for(stock) %>
-    </header>
-  </article>
-<% end %>
+<div class="vid">
+<video id ="player" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+  <source src="//videos.dealer.com/videos2/clients/c/cllc/32fc014c0a0e0ca35e9b291694c8c24a_highest.mp4" type="video/mp4">
+</video>
+</div>
