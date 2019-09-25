@@ -16,3 +16,7 @@
  .navbar-light .navbar-nav .nav-link {
    color: red;
  }
+
+ .navbar-bgcolor {
+     background-color: #101010;
+ }
