@@ -18,5 +18,9 @@
  }
 
  .navbar-bgcolor {
-     background-color: #101010;
+   background-color: #101010;
  }
+
+ .nav-link:hover {
+  text-color: blue;
+}
