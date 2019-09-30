@@ -1,36 +1,49 @@
-<article>
-  <header>
-    <h1><%= @stock.make %> <%= @stock.model %></h1>
-  </header>
-  <h3>Year</h3>
-  <p>
-    <%= @stock.year %>
-  </p>
-  <h3>Color</h3>
-  <p>
-    <%= @stock.color %>
-  </p>
-  <h3>Dealer Price</h3>
-  <p>
-    <%= @stock.dealerprice %>
-  </p>
-  <h3>Sale Price</h3>
-  <p>
-    <%= @stock.saleprice %>
-  </p>
-  <h3>Profit</h3>
-  <p>
-    <%= @stock.profit %>
-  </p>
-  <h3>Inventory Status</h3>
-  <p>
-    <%= @stock.inventorystatus %>
-  </p>
-  <h3>URL</h3>
-  <p>
-    <%= @stock.url %>
-  </p>
-</article>
+<form>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Make</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.make %>>
+  </div>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Model</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.model %>>
+  </div>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Year</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.year %>>
+  </div>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Color</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.color %>>
+  </div>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Dealer Price</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.dealerprice %>>
+  </div>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Sales Price</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.saleprice %>>
+  </div>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Profit</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.profit %>>
+  </div>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Inventory Status</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.inventorystatus %>>
+  </div>
+  <div class="form-group">
+    <div class="col-3">
+    <label for="formGroupExampleInput">Picture URL</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.url %>>
+  </div><br>
 
 <nav>
   <button type="button" class="btn btn-outline-info"><%= link_to "All Inventory", stocks_path %></button>
