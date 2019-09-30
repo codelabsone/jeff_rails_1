@@ -26,6 +26,7 @@
     color: #FFC0CB;
 }
 
+/* When the menu is collapsed, default theme is black making the icon hard to see.  This sets the color for the icon*/
 .navbar-toggler {
   background-color: red;
 }
