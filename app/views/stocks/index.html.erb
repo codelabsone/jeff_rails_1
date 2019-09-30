@@ -1,8 +1,29 @@
+<center><table border="1" cellspacing="0" cellpadding="10" id="c"></center>
+    <table class="table table-sm">
+      <h3><center>List Of Inventory</h3></center>
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Stock #</th>
+        <th scope="col">Stock Image</th>
+        <th scope="col">Model</th>
+        <th scope="col">Color</th>
+        <th scope="col">Year</th>
+        <th scope="col">Price</th>
+        <th scope="col">Status</th>
+      </tr>
+      </thead>
+
+<tbody>
 <% @stocks.each do |stock| %>
-  <article>
-    <header>
-      <h2>Vehicle: <%= link_to(stock.id, stock_path(stock)) %></h2>
-      <%= image_for(stock) %>
-    </header>
-  </article>
+<tr>
+  <td style="width: 100px; text-align:center"><%= link_to(stock.id, stock_path(stock)) %></td>
+  <td style="width: 150px;"><%= image_for(stock) %></td>
+  <td style="width: 200px;"><%= stock.model %></td>
+  <td><%= stock.color %></td>
+  <td><%= stock.year %></td>
+  <td><%= stock.saleprice %></td>
+  <td><%= stock.inventorystatus %></td>
+  </tr>
 <% end %>
+</tbody>
+</table>
