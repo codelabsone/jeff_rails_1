@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require js-routes
 //= require jquery
+//= require bootstrap-sprockets
 //= require datatables
 //= require_tree .
