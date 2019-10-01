@@ -16,5 +16,8 @@
 //= require js-routes
 //= require jquery
 //= require bootstrap-sprockets
-//= require datatables
+//= require datatables/dataTables.bootstrap
 //= require_tree .
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
