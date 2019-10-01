@@ -1,4 +1,6 @@
 <%= form_for(@stock) do |f| %>
+  <%= render "shared/errors", object: @stock %>
+
 <p>
   <%= f.label :make %><br/>
   <%= f.text_field :make, autofocus: true %>
