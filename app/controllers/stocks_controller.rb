@@ -13,8 +13,11 @@ class StocksController < ApplicationController
 
   def update
     @stock = Stock.find(params[:id])
-    @stock.update(stock_params)
-    redirect_to @stock
+    if @stock.update(stock_params)
+      redirect_to @stock, notice: "Stock updated successfully"
+    else
+      render :edit
+    end
   end
 
   def new
@@ -23,14 +26,17 @@ class StocksController < ApplicationController
 
   def create
     @stock = Stock.new(stock_params)
-    @stock.save
-    redirect_to @stock
+    if @stock.save
+      redirect_to @stock, notice: "Stock successfully created!"
+    else
+      render :new
+    end
   end
 
   def destroy
   @stock = Stock.find(params[:id])
   @stock.destroy
-  redirect_to @stock
+  redirect_to stocks_url, alert: "Stock successfully deleted"
   end
 
   private
