@@ -12,5 +12,6 @@
  *
  *= require_tree .
  *= navbar
- *= require_self
+ *= require users
+ *= require_self 
  */
