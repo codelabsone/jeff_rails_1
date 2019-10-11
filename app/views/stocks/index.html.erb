@@ -1,10 +1,32 @@
 <script>
   $(document).ready( function () {
       $('#table_id').DataTable();
+
+      var table = $('.dataTable').DataTable();
+      $('.dataTable').on('click', 'tbody td', function() {
+
+    //get textContent of the TD
+    console.log('TD cell textContent : ', this.textContent)
+
+    //get the value of the TD using the API
+    console.log('value by API : ', table.cell({ row: this.parentNode.rowIndex, column : this.cellIndex }).data());
+    })
+    $('.dataTable').on('click', 'tbody tr', function() {
+      var url = table.row(this).data()[0]
+      //console.log(url);
+      var patt = /<a href="(.*?)"/g;
+ while(match=patt.exec(url)){
+     //alert(match[1]);
+     url = match[1]
+ }
+    //  console.log(url);
+      window.location = url;
+    })
   });
 </script>
 
 <table id="table_id" class="display">
+  test
     <thead>
         <tr>
           <th scope="col">Stock #</th>
@@ -17,9 +39,11 @@
         </tr>
     </thead>
     <tbody>
+    <% count = 0 %>
     <% @stocks.each do |stock| %>
-    <tr>
-      <td style="width: 100px; text-align:center"><%= link_to(stock.id, stock_path(stock)) %></td>
+    <tr style="cursor:pointer" id= <%="data-row#{count}"%>>
+
+      <td class="stock-link" style="width: 100px; text-align:center"><%= link_to(stock.id, stock_path(stock)) %></td>
       <td style="width: 150px;"><%= image_for(stock) %></td>
       <td style="width: 200px;"><%= stock.model %></td>
       <td><%= stock.color %></td>
@@ -27,6 +51,7 @@
       <td><%= stock.saleprice %></td>
       <td><%= stock.inventorystatus %></td>
       </tr>
+<% count = count + 1 %>
     <% end %>
     </tbody>
 </table>

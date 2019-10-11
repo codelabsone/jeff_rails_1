@@ -7,4 +7,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 8}
 
+  validates :username, presence: true,
+                     format: /\A[A-Z0-9]+\z/i,
+                     uniqueness: { case_sensitive: false }
+
 end
