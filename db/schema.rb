@@ -12,20 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20191010235555) do
 
-  create_table "inventories", force: :cascade do |t|
-    t.string "make"
-    t.string "model"
-    t.string "color"
-    t.integer "year"
-    t.integer "dealerprice"
-    t.integer "saleprice"
-    t.integer "profit"
-    t.string "inventorystatus"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "url"
-  end
-
   create_table "stocks", force: :cascade do |t|
     t.string "make"
     t.string "model"
