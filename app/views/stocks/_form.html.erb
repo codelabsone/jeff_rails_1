@@ -1,96 +1,46 @@
 <%= form_for(@stock) do |f| %>
   <%= render "shared/errors", object: @stock %>
 
-<p>
-  <%= f.label :make %><br/>
-  <%= f.text_field :make, autofocus: true %>
-</p>
-<p>
-  <%= f.label :model %><br/>
-  <%= f.text_field :model %>
-</p>
-<p>
-  <%= f.label :color %><br/>
-  <%= f.text_field :color %>
-</p>
-<p>
-  <%= f.label :year %><br/>
-  <%= f.text_field :year %>
-</p>
-<p>
-  <%= f.label :dealerprice %><br/>
-  <%= f.text_field :dealerprice %>
-</p>
-<p>
-  <%= f.label :saleprice %><br/>
-  <%= f.text_field :saleprice %>
-</p>
-<p>
-  <%= f.label :profit %><br/>
-  <%= f.text_field :profit %>
-</p>
-<p>
-  <%= f.label :inventorystatus %><br/>
-  <%= f.text_field :inventorystatus %>
-</p>
-<p>
-  <%= f.label :url %><br/>
-  <%= f.text_field :url %>
-</p>
-<p>
+<fieldset>
+  <ol>
+    <li class="required">
+      <%= f.label :make %>
+      <%= f.text_field :make, autofocus: true %>
+    </li>
+    <li class="required">
+      <%= f.label :model %>
+      <%= f.text_field :model %>
+    </li>
+    <li class="required">
+      <%= f.label :color %>
+      <%= f.text_field :color %>
+    </li>
+    <li class="required">
+      <%= f.label :year %>
+      <%= f.text_field :year %>
+    </li>
+    <li class="required">
+      <%= f.label :dealerprice %>
+      <%= f.text_field :dealerprice %>
+    </li>
+    <li class="required">
+      <%= f.label :saleprice %>
+      <%= f.text_field :saleprice %>
+    </li>
+    <li class="required">
+      <%= f.label :profit %>
+      <%= f.text_field :profit %>
+    </li>
+    <li class="required">
+      <%= f.label :inventorystatus %>
+      <%= f.text_field :inventorystatus %>
+    </li>
+    <li class="required">
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </li>
+  </ol>
   <%= f.submit %>
-  <%= link_to "Cancel", automotives_path %>
-</p>
+  <%= link_to "Cancel", automotives_path, class: 'button' %>
+</fielset>
 <% end %>
-
-
-
-
-
-
-<form>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Make</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.make %>>
-  </div>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Model</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.model %>>
-  </div>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Year</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.year %>>
-  </div>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Color</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.color %>>
-  </div>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Dealer Price</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.dealerprice %>>
-  </div>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Sales Price</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.saleprice %>>
-  </div>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Profit</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.profit %>>
-  </div>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Inventory Status</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.inventorystatus %>>
-  </div>
-  <div class="form-group">
-    <div class="col-3">
-    <label for="formGroupExampleInput">Picture URL</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @stock.url %>>
-  </div><br>
