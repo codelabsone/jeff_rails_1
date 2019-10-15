@@ -15,12 +15,24 @@
         <li class="nav-item">
           <a class="nav-link" href="/automotives/contacts">Contact Us</a>
         </li>
-        <li class="nav-item align-self-end">
+        <% if current_user %>
+        <li class="nav-item nav-link" style=" margin-left: 54%;">
+          <%= link_to current_user.name, current_user %>
+        </li>
+        <li class="nav-item nav-link">
+          <%= link_to 'Sign Out', session_path, method: :delete, class: 'button' %>
+        </li>
+        <li class="nav-item nav-link pull-right">
+          <%= link_to "Account Settings", edit_user_path(current_user) %>
+        </li>
+        <% else %>
+        <li class="nav-item" style=" margin-left: 65%;">
           <a class="nav-link" href="/users/new">Signup</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/session/new">Sign In</a>
         </li>
+        <% end %>
       </ul>
     </div>
   </div>
