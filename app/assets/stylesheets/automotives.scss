@@ -73,3 +73,8 @@ header .overlay {
     background-color: $flash-alert-color;
   }
 }
+
+aside#sidebar {
+  width: 200px;
+  float: right;
+}
