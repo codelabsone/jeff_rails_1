@@ -5,7 +5,8 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     format: /\A\S+@\S+\z/,
                     uniqueness: { case_sensitive: false }
-  validates :password, length: { minimum: 8}
+  validates :password,  length: { minimum: 8, allow_nil: true },
+                                       confirmation: true
 
   validates :username, presence: true,
                      format: /\A[A-Z0-9]+\z/i,
