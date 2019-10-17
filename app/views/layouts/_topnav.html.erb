@@ -17,13 +17,13 @@
         </li>
         <% if current_user %>
         <li class="nav-item nav-link" style=" margin-left: 54%;">
-          <%= link_to current_user.name, current_user %>
+          <%= link_to current_user.name, current_user, class: 'button' %>
         </li>
         <li class="nav-item nav-link">
           <%= link_to 'Sign Out', session_path, method: :delete, class: 'button' %>
         </li>
         <li class="nav-item nav-link pull-right">
-          <%= link_to "Account Settings", edit_user_path(current_user) %>
+          <%= link_to "Account Settings", edit_user_path(current_user), class: 'button' %>
         </li>
         <% else %>
         <li class="nav-item" style=" margin-left: 65%;">
