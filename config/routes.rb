@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :favorites
   root "automotives#index"
 
   resources :users

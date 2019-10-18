@@ -1,12 +1,14 @@
 class StocksController < ApplicationController
   before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
+
   def index
     @stocks = Stock.all
   end
 
   def show
     @stock = Stock.find(params[:id])
+    @buyers = @stock.buyers
   end
 
   def edit

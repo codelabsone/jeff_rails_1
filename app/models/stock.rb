@@ -6,4 +6,8 @@ class Stock < ApplicationRecord
   with:    /\w+\.(gif|jpg|png|jpeg)\z/i,
   message: "must reference a GIF, JPG, or PNG image"
   }
+
+  has_many :favorites, dependent: :destroy
+  has_many :buyers, through: :favorites, source: :user
+
 end
