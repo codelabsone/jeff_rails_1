@@ -6,15 +6,14 @@
       <li><a class="nav-link button" href="/automotives/contacts">Contact Us</a></li>
     </ul>
 
-
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
-      <li><%= link_to current_user.name, current_user, class: 'button' %></li>
-      <li><%= link_to 'Sign Out', session_path, method: :delete, class: 'button' %></li>
-      <li><%= link_to "Account Settings", edit_user_path(current_user), class: 'button' %></li>
+      <li><a class="nav-link button"<%= link_to current_user.name, current_user %></a></li>
+      <li><a class="nav-link button"<%= link_to 'Sign Out', session_path, method: :delete %></a></li>
+      <li><a class="nav-link button"<%= link_to "Account Settings", edit_user_path(current_user) %></a></li>
       <% else %>
-      <li><a class="nav-link" href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a class="nav-link" href="/session/new"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a class="nav-link button" href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a class="nav-link button" href="/session/new"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
     <% end %>
 
