@@ -10,7 +10,16 @@
   </header>
 </article>
 
-<%# if @favorites.any? %>
+<% if @favorite_cars.any? %>
+<h4>Favorite Vehicles</h4>
+  <ul>
+    <% @favorite_cars.each do |stock| %>
+      <li>
+        <%= link_to stock.color, stock %> <%= link_to stock.make, stock %> <%= link_to stock.model, stock %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 <footer>
   <nav>
