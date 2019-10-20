@@ -5,7 +5,12 @@
   <h5>
     <%= pluralize(@buyers.size, 'Potential Buyers') %>
   </h5>
-  <% if current_user.admin? %>
+  <h3>Reviews</h3>
+  <p>
+    <%= link_to pluralize(@stock.reviews.size, "review"),
+                stock_reviews_path(@stock) %>
+  </p>
+  <% if current_user_admin? %>
     <% if @buyers.any? %>
     <h3>Potential Buyers</h3><hr/>
       <ul>
@@ -25,3 +30,8 @@
     </div>
   </p>
 </article>
+
+<footer>
+<%= link_to "Write Review", new_stock_review_path(@stock),
+             class: 'button ok review' %>
+</footer>
