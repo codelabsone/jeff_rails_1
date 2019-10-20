@@ -7,21 +7,26 @@ class UsersController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
   @user = User.find(params[:id])
   @reviews = @user.reviews
+=======
+    @user = User.find(params[:id])
+    @favorite_cars = @user.favorite_cars
+>>>>>>> 2bf53ec286047d12448bd2910db7300901c5d45b
   end
 
   def new
-  @user = User.new
+    @user = User.new
   end
 
   def create
-  @user = User.new(user_params)
-  if @user.save
-    session[:user_id] = @user.id
-    redirect_to @user, notice: "Thanks for signing up!"
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to @user, notice: "Thanks for signing up!"
     else
-    render :new
+      render :new
     end
   end
 

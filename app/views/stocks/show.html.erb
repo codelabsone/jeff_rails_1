@@ -1,7 +1,8 @@
 <article>
   <header>
-    <h1>Needs to work on</h1>
+    <h1> <%= "#{@stock.make} #{@stock.model}"  %> </h1>
   </header>
+<<<<<<< HEAD
   <h5>
     <%= pluralize(@buyers.size, 'Potential Buyers') %>
   </h5>
@@ -11,8 +12,25 @@
                 stock_reviews_path(@stock) %>
   </p>
   <% if current_user_admin? %>
+=======
+
+    <div id="container">
+      <section id="sidebar">
+        <%= render "layouts/editsidebar" %>
+      </section>
+    </div>
+
+  <h5><%= pluralize(@buyers.size, 'User Favorite') %></h5><br/>
+
+  space for car photos here
+
+  <br/>
+  
+  <% if current_user.admin? %>
+>>>>>>> 2bf53ec286047d12448bd2910db7300901c5d45b
     <% if @buyers.any? %>
-    <h3>Potential Buyers</h3><hr/>
+    <hr/>
+    <h6>Potential Buyers</h6>
       <ul>
         <% @buyers.each do |user| %>
           <li>
@@ -22,13 +40,7 @@
       </ul>
     <% end %>
   <% end %>
-  <p>
-    <div id="container">
-      <section id="sidebar">
-        <%= render "layouts/editsidebar" %>
-      </section>
-    </div>
-  </p>
+
 </article>
 
 <footer>
