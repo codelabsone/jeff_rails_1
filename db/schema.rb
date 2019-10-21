@@ -42,30 +42,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_021954) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "inventories", force: :cascade do |t|
-    t.string "make"
-    t.string "model"
-    t.string "color"
-    t.integer "year"
-    t.integer "dealerprice"
-    t.integer "saleprice"
-    t.integer "profit"
-    t.string "inventorystatus"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "url"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.integer "stars"
-    t.text "comment"
-    t.integer "stock_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.index ["stock_id"], name: "index_reviews_on_stock_id"
-  end
-
   create_table "stocks", force: :cascade do |t|
     t.string "make"
     t.string "model"

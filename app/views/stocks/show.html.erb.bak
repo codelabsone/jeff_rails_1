@@ -1,0 +1,25 @@
+<article>
+  <header>
+    <h1>Needs to work on</h1>
+  </header>
+  <h5>
+    <%= pluralize(@buyers.size, 'Potential Buyers') %>
+  </h5>
+  <% if current_user.admin? %>
+    <% if @buyers.any? %>
+    <h3>Potential Buyers</h3><hr/>
+      <ul>
+        <% @buyers.each do |user| %>
+          <li>
+            <%= link_to user.name, user %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+    <div id="container">
+      <section id="sidebar">
+        <%= render "layouts/editsidebar" %>
+      </section>
+    </div>
+</article>

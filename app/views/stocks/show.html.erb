@@ -28,15 +28,11 @@
       </ul>
     <% end %>
   <% end %>
-
-  <% if current_user %>
-    <% if @current_favorite %>
-      <%= button_to "Unfavorite", stock_favorite_path(@stock, @current_favorite), method: :delete %>
-        <% else %>
-      <%= button_to "Favorite", stock_favorites_path(@stock) %>
-    <% end %>
-  <% end %>
-
+    <div id="container">
+      <section id="sidebar">
+        <%= render "layouts/editsidebar" %>
+      </section>
+    </div>
 </article>
 
 <footer>
