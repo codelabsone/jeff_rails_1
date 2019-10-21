@@ -32,7 +32,8 @@ gem 'jquery-turbolinks'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-  
+# For active storage
+gem "activestorage", git: "https://github.com/rails/activestorage.git"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
