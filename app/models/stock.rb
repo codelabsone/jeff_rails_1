@@ -9,5 +9,16 @@ class Stock < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :buyers, through: :favorites, source: :user
+  has_many :reviews, dependent: :destroy
+  has_many_attached :uploads
+
+  def average_stars
+    reviews.average(:stars)
+  end
+
+  def variant(file, options)
+      variant = file.variant(options)
+      main_app.rails_blob_representation_path(variant.blob.signed_id, variant.variation.key, variant.blob.filename)
+    end
 
 end

@@ -2,6 +2,7 @@
   <header>
     <h1> <%= "#{@stock.make} #{@stock.model}"  %> </h1>
   </header>
+<<<<<<< HEAD
 
     <div id="container">
       <section id="sidebar">
@@ -15,6 +16,21 @@
 
   <br/>
 
+=======
+  <div id="container">
+    <section id="sidebar">
+      <%= render "layouts/editsidebar" %>
+    </section>
+  </div>
+  <h5>
+    <%= pluralize(@buyers.size, 'Potential Buyers') %>
+  </h5>
+  <h3>Reviews</h3>
+  <p>
+    <%= link_to pluralize(@stock.reviews.size, "review"),
+                stock_reviews_path(@stock) %>
+  </p>
+>>>>>>> f4449fc4151af4399219b151aacaec9266660658
   <% if current_user_admin? %>
     <% if @buyers.any? %>
     <hr/>
@@ -29,6 +45,7 @@
     <% end %>
   <% end %>
 
+<<<<<<< HEAD
   <% if current_user %>
     <% if @current_favorite %>
       <%= button_to "Unfavorite", stock_favorite_path(@stock, @current_favorite), method: :delete %>
@@ -36,5 +53,15 @@
       <%= button_to "Favorite", stock_favorites_path(@stock) %>
     <% end %>
   <% end %>
+=======
+
+    <%= url_for(@stock.uploads) %>
+
+>>>>>>> f4449fc4151af4399219b151aacaec9266660658
 
 </article>
+
+<footer>
+<%= link_to "Write Review", new_stock_review_path(@stock),
+             class: 'button ok review' %>
+</footer>

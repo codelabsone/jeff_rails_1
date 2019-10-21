@@ -3,6 +3,7 @@ class StocksController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
   def index
+    stock = Stock.create!(stock_params)
     @stocks = Stock.all
   end
 
@@ -49,7 +50,7 @@ class StocksController < ApplicationController
   private
 
   def stock_params
-    params.require(:stock).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus, :url)
+    params.require(:stock).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus, :url, :title, :content, uploads: [])
   end
 
 end
