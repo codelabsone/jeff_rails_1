@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :favorites
+
   root "automotives#index"
 
   resources :users
+  resources :automotives
+  root "automotives#index"
   get 'signup' => 'users#new'
-
-  resource :session
-
   get "/automotives/contacts", to: "automotives#contacts", as: "contacts"
   resources :automotives
-  resources :stocks
+  resources :stocks do
+    resources :favorites
+  end
 end

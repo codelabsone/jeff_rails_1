@@ -1,13 +1,24 @@
 <article>
   <header>
-    <h1>Needs to work on</h1>
+    <h1> <%= "#{@stock.make} #{@stock.model}"  %> </h1>
   </header>
-  <h5>
-    <%= pluralize(@buyers.size, 'Potential Buyers') %>
-  </h5>
-  <% if current_user.admin? %>
+
+    <div id="container">
+      <section id="sidebar">
+        <%= render "layouts/editsidebar" %>
+      </section>
+    </div>
+
+  <h5><%= pluralize(@buyers.size, 'User Favorite') %></h5><br/>
+
+  space for car photos here
+
+  <br/>
+
+  <% if current_user_admin? %>
     <% if @buyers.any? %>
-    <h3>Potential Buyers</h3><hr/>
+    <hr/>
+    <h6>Potential Buyers</h6>
       <ul>
         <% @buyers.each do |user| %>
           <li>
@@ -23,3 +34,8 @@
       </section>
     </div>
 </article>
+
+<footer>
+<%= link_to "Write Review", new_stock_review_path(@stock),
+             class: 'button ok review' %>
+</footer>

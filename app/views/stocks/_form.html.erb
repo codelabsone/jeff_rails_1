@@ -39,6 +39,10 @@
       <%= f.label :url %>
       <%= f.text_field :url %>
     </li>
+    <li class="required">
+      <%= f.label :uploads %>
+      <%= f.file_field :uploads, multiple: true %>
+    </li>
   </ol>
   <%= f.submit %>
   <%= link_to "Cancel", automotives_path, class: 'button' %>

@@ -3,12 +3,16 @@ class StocksController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
   def index
+    stock = Stock.create!(stock_params)
     @stocks = Stock.all
   end
 
   def show
     @stock = Stock.find(params[:id])
     @buyers = @stock.buyers
+    if current_user
+      @current_favorite = current_user.favorites.find_by(stock_id: @stock.id)
+    end
   end
 
   def edit
@@ -46,7 +50,7 @@ class StocksController < ApplicationController
   private
 
   def stock_params
-    params.require(:stock).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus, :url)
+    params.require(:stock).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus, :url, :title, :content, uploads: [])
   end
 
 end
