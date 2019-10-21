@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-
-  root "automotives#index"
-
+resource :session
   resources :users
   resources :automotives
   root "automotives#index"
