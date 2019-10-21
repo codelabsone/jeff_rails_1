@@ -3,6 +3,7 @@ class StocksController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
   def index
+    stock = Stock.create!(stock_params)
     @stocks = Stock.all
   end
 
