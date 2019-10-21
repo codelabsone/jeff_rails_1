@@ -3,7 +3,6 @@ class StocksController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
   def index
-    stock = Stock.create!(stock_params)
     @stocks = Stock.all
   end
 
@@ -42,15 +41,16 @@ class StocksController < ApplicationController
   end
 
   def destroy
-  @stock = Stock.find(params[:id])
-  @stock.destroy
-  redirect_to stocks_url, alert: "Stock successfully deleted"
+    @stock = Stock.find(params[:id])
+    @stock.destroy
+    redirect_to stocks_url, alert: "Stock successfully deleted"
   end
 
   private
 
   def stock_params
-    params.require(:stock).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus, :url, :title, :content, uploads: [])
+    params.require(:stock).permit(:make, :model, :year, :color, :dealerprice, :saleprice, :profit, :inventorystatus,
+      :url, :title, :content, uploads: [])
   end
 
 end

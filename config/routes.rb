@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-resource :session
+  resource :session
   resources :users
   resources :automotives
   root "automotives#index"
@@ -9,5 +9,6 @@ resource :session
   resources :automotives
   resources :stocks do
     resources :favorites
+      resources :reviews
   end
 end
