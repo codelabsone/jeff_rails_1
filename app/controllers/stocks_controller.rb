@@ -9,6 +9,9 @@ class StocksController < ApplicationController
   def show
     @stock = Stock.find(params[:id])
     @buyers = @stock.buyers
+    if current_user
+      @current_favorite = current_user.favorites.find_by(stock_id: @stock.id)
+    end
   end
 
   def edit

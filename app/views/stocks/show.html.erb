@@ -14,8 +14,8 @@
   space for car photos here
 
   <br/>
-  
-  <% if current_user.admin? %>
+
+  <% if current_user_admin? %>
     <% if @buyers.any? %>
     <hr/>
     <h6>Potential Buyers</h6>
@@ -26,6 +26,14 @@
           </li>
         <% end %>
       </ul>
+    <% end %>
+  <% end %>
+
+  <% if current_user %>
+    <% if @current_favorite %>
+      <%= button_to "Unfavorite", stock_favorite_path(@stock, @current_favorite), method: :delete %>
+        <% else %>
+      <%= button_to "Favorite", stock_favorites_path(@stock) %>
     <% end %>
   <% end %>
 

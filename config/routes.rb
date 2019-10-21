@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :favorites
+
   root "automotives#index"
 
   resources :users
@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   get "/automotives/contacts", to: "automotives#contacts", as: "contacts"
   resources :automotives
-  resources :stocks
+  resources :stocks do
+    resources :favorites
+  end
 end
