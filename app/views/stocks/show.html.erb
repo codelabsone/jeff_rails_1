@@ -17,7 +17,6 @@
 
   <% if current_user_admin? %>
     <% if @buyers.any? %>
-    <hr/>
     <h6>Potential Buyers</h6>
       <ul>
         <% @buyers.each do |user| %>
