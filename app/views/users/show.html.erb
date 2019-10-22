@@ -15,7 +15,7 @@
   <ul>
     <% @favorite_cars.each do |stock| %>
       <li>
-        <%= link_to stock.color, stock %> <%= link_to stock.make, stock %> <%= link_to stock.model, stock %>
+        <%= link_to "#{stock.color} #{stock.make} #{stock.model}", stock %>
       </li>
     <% end %>
   </ul>
