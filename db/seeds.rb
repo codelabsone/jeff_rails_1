@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#Seed information for the Stock Table.
+Stock.destroy_all
 Stock.create!([
   {
     make: "Chrysler",
@@ -62,3 +65,28 @@ Stock.create!([
     url: "1.jpeg"
   }
 ])
+
+p "Created #{Stock.count} stocks."
+
+#Seed information for the users table.
+User.destroy_all
+user = User.new(
+      :name                  => "admin",
+      :email                 => "admin@admin.com",
+      :username              => "admin",
+      :password              => "12345678",
+      :password_confirmation => "12345678",
+      :admin                 => "true"
+  )
+user.save!
+
+user = User.new(
+        :name                  => "user",
+        :email                 => "user@user.com",
+        :username              => "user",
+        :password              => "12345678",
+        :password_confirmation => "12345678"
+    )
+user.save!
+
+p "Created #{User.count} users."
